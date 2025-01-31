@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from django.conf import settings
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse('Rango says hey there partner! <a href="/rango/about">about</a> ')
+    context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
+
+    return render(request, 'rango/index.html', context_dict)
 
 def about(request):
-    return HttpResponse('Rango says here is the about page. <a href="/rango">home</a>')
+    context_dict = {'MEDIA_URL': settings.MEDIA_URL}
+    return render(request, 'rango/about.html', context_dict)
