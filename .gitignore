@@ -169,4 +169,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-.vscode/launch.json
+.vscode/
+rango/progress_tests/
