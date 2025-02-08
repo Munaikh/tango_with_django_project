@@ -1,4 +1,3 @@
-from unicodedata import category
 from django.shortcuts import redirect, render
 from django.conf import settings
 from django.urls import reverse
