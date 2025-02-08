@@ -49,7 +49,7 @@ def add_category(request: HttpRequest):
 
         if form.is_valid():
             form.save(commit=True)
-            return redirect("/rango/")
+            return redirect(reverse("rango:index"))
         else:
             print(form.errors)
 
@@ -63,7 +63,7 @@ def add_page(request: HttpRequest, category_name_slug):
         category = None
 
     if category is None:
-        return redirect("/rango/")
+        return redirect(reverse("rango:index"))
 
     form = PageForm()
 
